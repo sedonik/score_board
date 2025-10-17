@@ -20,8 +20,15 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\Service\ScoreBoard\JsonRepository:
+        public: true
+
     App\Service\ScoreBoard:
         public: true
+
+    App\Command\ScoreBoard\:
+        resource: '../src/Command/ScoreBoard/'
+        tags: [ 'console.command' ]
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
